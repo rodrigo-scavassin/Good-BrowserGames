@@ -1,0 +1,24 @@
+<%- include('../_partial/_header.ejs') %>
+<%- include('../_partial/_navbar_admin.ejs') %>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Criar Categoria</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
+            </div>
+            </div>
+        </div> 
+        <form method="post" action="/categorias/">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome da Categoria</label>
+              <input type="text" class="form-control" id="nome" name="nome">
+
+              <div id="dica_nome" class="form-text">Insira o nome da Categoria aqui.</div>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Criar</button>
+        </form>
+        </main>
+    </div>
+    </div>
+  
+<%- include('../_partial/_footer_admin.ejs') %>

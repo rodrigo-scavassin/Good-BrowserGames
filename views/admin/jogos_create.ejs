@@ -1,0 +1,55 @@
+<%- include('../_partial/_header.ejs') %>
+<%- include('../_partial/_navbar_admin.ejs') %>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Inserir Jogo</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
+            </div>
+            </div>
+        </div> 
+        <form method="post" action="/jogos/">
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome do jogo</label>
+
+                  <input type="text" class="form-control" id="nome" name="titulo">
+
+                  <div id="dica_nome" class="form-text">Insira o nome do jogo aqui.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="url" class="form-label">Link do Jogo</label>
+
+                    <input type="text" class="form-control" id="url" name="url">
+
+                    <div id="dica_url" class="form-text">Insira a URL do jogo aqui.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+                    <div id="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
+                </div>
+                <label for="categorias">Selecione a categoria abaixo:</label>
+
+                <select class="form-control dropdown" name="categoria" id="categorias">
+                    <% categorias.forEach((categoria)=> { %>
+                    <option value="<%= categoria._id %>"><%= categoria.nome %></option>
+                    <% }) %>
+                  </select>
+                <div class="mb-3">
+                    <label class="form-label" for="customFile">Selecionar Thumbnail</label>
+
+                    <input type="text" class="form-control" id="customFile" name="imagem" />
+                    <div id="dica_url" class="form-text">Adicione uma imagem de capa para o jogo.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="imagens" class="form-label">Selecione imagens para o carrosel</label>
+                    <input class="form-control" type="file" id="imagens" multiple>
+                  </div>
+                <button type="submit" class="btn btn-outline-success">Criar</button>
+            </form>
+        </main>
+    </div>
+    </div>
+
+
+<%- include('../_partial/_footer_admin.ejs') %>

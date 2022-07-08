@@ -1,0 +1,44 @@
+<%- include('../_partial/_header.ejs') %>
+<body class="text-center">
+  
+<main id="mainpage" class="form-signin">
+  <!-- ALERT -->
+  <div id="alertbox" style="display: none;" class="alert alert-warning alert-dismissible fade show" role="alert">
+    ou should check in on some of those fields below.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <!-- ALERT FIM  -->
+  <form method='post' action="/auth/login">
+    <img class="mb-4" src="/img/logo.png" alt="" width="100px">
+    <h1 class="h3 mb-3 fw-normal">Faça Login</h1>
+
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required>
+      <label for="floatingInput">Email</label>
+    </div>
+    
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="senha" required>
+      <label for="floatingPassword">Senha</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me">  Lembrar dados
+      </label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+    </div>
+  </form> 
+  <form method="get" action="/auth/register">
+    <button class="w-100 btn btn-lg btn-outline-secondary" type="submit">Ainda não tem conta?</button>
+</form>
+
+    <p class="mt-5 mb-3 text-muted">&copy; 2022-2022</p>
+  
+</main>
+

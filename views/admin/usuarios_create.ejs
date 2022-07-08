@@ -1,0 +1,78 @@
+<%- include('../_partial/_header.ejs') %>
+<%- include('../_partial/_navbar_admin.ejs') %>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Criar Usuario</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
+            </div>
+            </div>
+        </div> 
+            <form method="post" action="/usuarios/">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckChecked" name="administrador" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Administrator
+                    </label>
+                </div>
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome</label>
+
+                  <input type="text" class="form-control" id="nome" name="nome">
+
+                  <div id="dica_nome" class="form-text">Nome Completo</div>
+                </div>
+                <div class="mb-3">
+                    <label for="sobrenome" class="form-label">Sobrenome</label>
+
+                    <input type="sobrenome" class="form-control" id="sobrenome" name="sobrenome">
+
+                    <div id="dica_sobrenome" class="form-text">Sobrenome</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+
+                    <input type="email" class="form-control" id="email" name="email">
+
+                    <div id="dica_email" class="form-text">Email</div>
+                </div>
+                <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF</label>
+
+                    <input type="text" class="form-control" id="cpf" name="cpf" rows="3"></input>
+
+                    <div id="dica_cpf" class="form-text">CPF</div>
+                </div>
+                <div class="mb-3">
+                    <label for="nascimento" class="form-label">Data Nascimento</label>
+
+                    <input type="date" class="form-control" id="nascimento" name="nascimento">
+
+                    <div id="dica_nascimento" class="form-text">Data de nascimento</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="imagem" class="form-label">Insira sua imagem</label>
+
+                    <input type="text" class="form-control" id="imagem" name="imagem">
+
+                    <div id="dica_imagem" class="form-text">Insira a url da sua imagem</div>
+                  </div>
+                
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="customFile">Selecionar Thumbnail</label>
+                    <input type="file" class="form-control" id="customFile" />
+                    <div id="dica_url" class="form-text">Adicione uma imagem de capa para o jogo.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="imagens" class="form-label">Selecione imagens para o carrosel</label>
+                    <input class="form-control" type="file" id="imagens" multiple>
+                  </div> -->
+                <button type="submit" class="btn btn-outline-success">Criar</button>
+            </form>
+        </main>
+    </div>
+    </div>
+
+
+<%- include('../_partial/_footer_admin.ejs') %>

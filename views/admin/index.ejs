@@ -1,0 +1,117 @@
+<%- include('../_partial/_header.ejs') %>
+<%- include('../_partial/_navbar_admin.ejs') %>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-outline-secondary">Salvar Relatório</button>
+                <button type="button" class="btn btn-outline-secondary">Exportar Relatório</button>
+            </div>
+            <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+            </button> -->
+            </div>
+        </div> 
+        <h1>JOGOS ORDENADOS POR QUANTIDADE DE AVALIAÇÕES</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome do Jogo</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Avaliação</th>
+                <th scope="col">Numero de Avaliações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% jogos1.forEach((jogo, index)=> { %>
+                <tr>
+                <td><%= index+1 %></td>
+                <td><%= jogo.titulo %></td>
+                <td><%= jogo.categoria.nome %></td>
+                <td><%= jogo.avaliacao %></td>
+                <td><%= jogo.qtd_avaliacoes %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+            </table>
+        </div>
+        <h1>USUÁRIOS ORDENADOS POR QUANTIDADE DE AVALIAÇÕES</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome do Usuario</th>
+                <th scope="col">e-mail</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Numero de Avaliações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% usuarios.forEach((usuario, index)=> { %>
+                    <tr>
+                    <td><%= index+1 %></td>
+                    <td><%= usuario.nome %></td>
+                    <td><%= usuario.email %></td>
+                    <td><%= usuario.cpf %></td>
+                    <td><%= usuario.qtd_avaliacoes %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+            </table>
+        </div>
+        <h1>JOGOS ORDENADOS PELA MÉDIA DE AVALIAÇÕES</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome do Jogo</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Avaliação</th>
+                <th scope="col">Numero de Avaliações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% jogos2.forEach((jogo, index)=> { %>
+                    <tr>
+                    <td><%= index+1 %></td>
+                    <td><%= jogo.titulo %></td>
+                    <td><%= jogo.categoria.nome %></td>
+                    <td><%= jogo.avaliacao %></td>
+                    <td><%= jogo.qtd_avaliacoes %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+            </table>
+        </div>
+        <h1>CATEGORIAS ORDENADAS POR QUANTIDADE DE AVALIAÇÕES</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Numero de Avaliações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% categorias.forEach((categoria, index)=> { %>
+                    <tr>
+                    <td><%= index+1 %></td>
+                    <td><%= categoria.nome %></td>
+                    <td><%= categoria.qtd_avaliacoes %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+            </table>
+        </div>
+        </main>
+    </div>
+    </div>
+
+
+<%- include('../_partial/_footer_admin.ejs') %>

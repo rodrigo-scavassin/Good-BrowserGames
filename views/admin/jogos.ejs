@@ -1,0 +1,47 @@
+<%- include('../_partial/_header.ejs') %>
+<%- include('../_partial/_navbar_admin.ejs') %>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Jogos</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <form action="/admin/jogos/create">
+                    <button type="submit" class="btn btn-outline-secondary">Inserir Jogo</button>
+                </form>
+                <form class=" ml-5 d-flex search_tool">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success " type="submit">Procurar</button>
+                </form>
+            </div>
+            
+            </div>
+        </div> 
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome do Jogo</th>
+                <th scope="col">Categorias</th>
+                <th scope="col">Avaliação</th>
+                <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% jogos.forEach((jogo)=> { %>
+                <tr>
+                <td><%= jogo._id %></td>
+                <td><%= jogo.titulo %></td>
+                <td><%= jogo.categoria.nome %></td>
+                <td><%= jogo.avaliacao %></td>
+                <td><a href="/admin/jogos/edit/<%= jogo._id %>">Edit</a></td>
+                </tr>
+                <% }) %>
+            </tbody>
+            </table>
+        </div>
+        </main>
+    </div>
+    </div>
+
+
+<%- include('../_partial/_footer_admin.ejs') %>

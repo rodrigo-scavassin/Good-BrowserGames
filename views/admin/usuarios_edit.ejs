@@ -1,0 +1,73 @@
+<%- include('../_partial/_header.ejs') %>
+<%- include('../_partial/_navbar_admin.ejs') %>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Editor de Jogos</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+
+            <form method="post" action="/usuarios/<%= usuario._id %>?_method=DELETE">
+                <button type="submit" class="btn btn-outline-danger">Block User</button>
+            </form>
+                <button type="button" class="btn btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
+            </div>
+            </div>
+        </div> 
+            <form method="post" action="/usuarios/<%= usuario._id %>?_method=PUT">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name="administrador" <%= usuario.administrador ? "checked" : "" %> >
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Administrator
+                    </label>
+                </div>
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nome" name="nome" value="<%= usuario.nome %>">
+                  <div id="dica_nome" class="form-text">Primeiro nome do jogador</div>
+                </div>
+                <div class="mb-3">
+                    <label for="sobrenome" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="<%= usuario.sobrenome %>">
+                    <div id="dica_sobrenome" class="form-text">Sobrenome do jogador</div>
+                  </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="<%= usuario.email %>">
+                    <div id="dica_email" class="form-text">Alterar somente se for requisitado.</div>
+                </div>
+                <fieldset disabled>
+                <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" value="<%= usuario.cpf %>" rows="3"></textarea>
+                    <div id="dica_cpf" class="form-text">Não é permitido alterar o CPF</div>
+                </div>
+                <div class="mb-3">
+                    <label for="nascimento" class="form-label">Data Nascimento</label>
+                    <input type="text" class="form-control" id="nascimento" name="nascimento" value="<%= usuario.nascimento %>">
+                    <div id="dica_nascimento" class="form-text">Não é permitido alterar a data de nascimento</div>
+                </div>
+                </fieldset>
+                  <div class="mb-3">
+                    <label for="imagem" class="form-label">Altere sua imagem</label>
+
+                    <input type="text" class="form-control" id="imagem" name="imagem" value="<%= usuario.imagem %>">
+
+                    <div id="dica_imagem" class="form-text">Altere a url da sua imagem</div>
+                  </div>
+                
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="customFile">Selecionar Thumbnail</label>
+                    <input type="file" class="form-control" id="customFile" />
+                    <div id="dica_url" class="form-text">Adicione uma imagem de capa para o jogo.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="imagens" class="form-label">Selecione imagens para o carrosel</label>
+                    <input class="form-control" type="file" id="imagens" multiple>
+                  </div> -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </main>
+    </div>
+    </div>
+
+
+<%- include('../_partial/_footer_admin.ejs') %>

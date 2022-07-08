@@ -1,0 +1,51 @@
+<%- include('../_partial/_header.ejs') %>
+<body class="text-center">
+  
+<main id="mainpage" class="form-signin">
+<form method='post' action="/auth/register">
+  <img class="mt-4 mb-2" src="/img/logo.png" alt="" width="100px">
+  <h1 class="h3 mb-3 fw-normal">Faça Login</h1>
+  
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" name="nome" required>
+    <label for="floatingInput">Nome</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" name="sobrenome" required>
+    <label for="floatingInput">Sobrenome</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required>
+    <label for="floatingInput">Email</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="senha" required>
+    <label for="floatingPassword">Senha</label>
+  </div>
+  <div class="form-floating mb-3">
+
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="confirmarsenha" required>
+
+    <label for="floatingPassword">Repetir Senha</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="CPF" name="cpf" required>
+    <label for="floatingInput">CPF</label>
+  </div>
+  <div class="form-floating mb-3">
+
+    <input type="date" class="form-control" id="floatingInput" placeholder="Dia/Mes/Ano" name="nascimento" required>
+
+    <label for="floatingInput">Data Nascimento</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Registrar</button>
+  </div>
+</form>
+<form action="/login">
+    <button class="w-100 btn btn-lg btn-outline-secondary" type="submit">Já possuo uma conta!</button>
+</form>
+<p class="mt-5 mb-3 text-muted">&copy; 2022-2022</p>
+</main>
+

@@ -1,0 +1,10 @@
+{
+    "nome":"matheus",
+    "sobrenome": "avelino",
+    "email": "matheus_dasa@hotmail.com",
+    "cpf": "12345678954", 
+    "nascimento": "04/11/1999",
+    "senha":"senha123",
+    "confirmarsenha":"senha123",
+    "administrador": "false"
+} 
